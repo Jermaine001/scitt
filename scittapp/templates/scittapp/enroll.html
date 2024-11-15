@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}SCITT | ENROLL {% endblock %}
+{% block content %}
+        <!-- Carousel Start -->
+        <div class="header-carousel owl-carousel">
+        <div class="header-carousel-item">
+            <img src="{% static 'assets1/img/scitt4.jpg' %}" class="img-fluid w-100" alt="Image">
+            <div class="carousel-caption">
+                <div class="carousel-caption-content p-3">
+                    <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">scitt class</h5>
+                    <h1 class="display-1 text-capitalize text-white mb-4">The Future of IT Excellence</h1>
+                    <p class="mb-5 fs-5">Empowering Future Innovators to Lead with Faith, Excellence, and Purpose in a Digital World
+                    </p>
+                    <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Enroll</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-carousel-item">
+            <img src="{% static 'assets1/img/scitt7.jpg' %}" class="img-fluid w-100" alt="Image">
+            <div class="carousel-caption">
+                <div class="carousel-caption-content p-3">
+                    <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">scitt class</h5>
+                    <h1 class="display-1 text-capitalize text-white mb-4">The Future of IT Excellence</h1>
+                    <p class="mb-5 fs-5 animated slideInDown">Fostering a Community of Tech Pioneers Rooted in Faith, Excellence, and Forward-Thinking 
+                    </p>
+                    <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Enroll</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-carousel-item">
+            <img src="{% static 'assets1/img/scitt2.jpg' %}" class="img-fluid w-100" alt="Image">
+            <div class="carousel-caption">
+                <div class="carousel-caption-content p-3">
+                    <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">scitt class</h5>
+                    <h1 class="display-1 text-capitalize text-white mb-4">The Future of IT Excellence</h1>
+                    <p class="mb-5 fs-5 animated slideInDown">Empowering You to Shape the Future of Technology with Skill, Purpose, and Faith
+                    </p>
+                    <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Enroll</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Carousel End --> 
+
+        {% if messages %}
+            <div class="message-container">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="enroll-form-container">
+            <!-- SCITT Logo -->
+            <img src="{% static 'assets1/img/scitt.jpg' %}" alt="SCITT Logo" class="form-logo">
+            
+            <!-- Title and Subtitle -->
+            <h2 class="form-title">SCITT Enrollment Form</h2>
+            <p class="form-subtitle">Enhance your tech skills and get certified!</p>
+        
+            <!-- Enrollment Form -->
+            <form action="{% url 'enroll' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="18" max="100" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="education">Educational Level</label>
+                    <select id="education" name="education" required>
+                        <option value="">Select your educational level</option>
+                        <option value="High School">High School</option>
+                        <option value="Undergraduate">Undergraduate</option>
+                        <option value="Graduate">Post Graduate</option>
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="programming">Programming Skills</label>
+                    <select id="programming" name="programming" required>
+                        <option value="">Select your programming skills</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="availability">Availability</label>
+                    <input type="text" id="availability" name="availability" placeholder="e.g., weekends, evenings" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="computer_access">Access to a Computer</label>
+                    <select id="computer_access" name="computer_access" required>
+                        <option value="">Do you have access to a computer?</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="internet_access">Access to the Internet</label>
+                    <select id="internet_access" name="internet_access" required>
+                        <option value="">Do you have access to the internet?</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <input type="submit" value="Enroll Now">
+                </div>
+            </form>
+        </div>
+
+        
+
+{% endblock %}

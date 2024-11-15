@@ -1,0 +1,134 @@
+
+
+/* Custom Success Card Styling */
+.custom-success-card {
+    background-color: #ffffff;
+    color: #2d572c;
+    border: 1px solid #c6e1c6;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Prevents content from overflowing */
+}
+
+.custom-success-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.custom-success-card p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* User Name Styling */
+.user-name {
+    font-weight: bold;
+    color: #2d572c;
+}
+
+/* Logo Container */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* SCITT Logo Styling */
+.scitt-logo {
+    max-width: 120px; /* Adjust logo size */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px; /* Centers logo and adds margin below */
+}
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .custom-success-card {
+        width: 90%; /* Full width for smaller screens */
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .scitt-logo {
+        max-width: 100px; /* Adjust logo size for mobile */
+        margin-bottom: 15px; /* Ensure there's space on mobile */
+    }
+
+    
+}
+
+
+/*** training Start ***/
+.training .training-item .training-inner {
+    position: relative;
+}
+
+.training .training-item .training-inner .training-title-name {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex; 
+    flex-direction: column;
+    justify-content: end;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.training .training-item {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.training .training-item:hover .training-inner .training-title-name {
+    background: rgba(0, 58, 102, 0.5);
+}
+
+.training .training-item:hover .training-inner .training-title-name a {
+    opacity: 0;
+}
+
+.training .training-item .training-inner img {
+    transition: 0.5s;
+}
+
+.training .training-item:hover .training-inner img {
+    transform: scale(1.3);
+}
+
+.training .training-item .training-content {
+    position: absolute;
+    width: 100%;
+    bottom: -100%;
+    left: 0;
+    transition: 0.5s;
+}
+
+.training .training-item:hover .training-content {
+    bottom: 0;
+}  
+/*** training End ***/
+
+
+/*** FAQs Start ***/
+.faq-section .accordion .accordion-item .accordion-header .accordion-button {
+    color: var(--bs-secondary);
+}
+
+.faq-section .accordion .accordion-item .accordion-header .accordion-button.collapsed {
+    color: var(--bs-dark);
+}
+/*** FAQs End ***/
